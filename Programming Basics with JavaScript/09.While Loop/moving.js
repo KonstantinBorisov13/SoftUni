@@ -1,0 +1,44 @@
+function moving(input) {
+    let index = 0;
+    let w = Number(input[index]);
+    index++;
+    let l = Number(input[index]);
+    index++;
+    let h = Number(input[index]);
+    index++;
+    let isFreeSpace = true
+
+    let cubicMetres = w * l * h;
+
+    let command = input[index]
+    index++
+
+    while( command !== "Done") {
+        let box = Number(command)
+        cubicMetres -= box
+        if(cubicMetres < 0) {
+            isFreeSpace = false
+            console.log(`No more free space! You need ${Math.abs(cubicMetres)} Cubic meters more.`);
+            
+            break;
+        }
+        command = input[index]
+        index++
+    }
+
+    if( isFreeSpace) {
+        console.log(`${cubicMetres} Cubic meters left.`);
+        
+    }
+
+    
+
+
+}
+
+moving(["10",
+"1",
+"2",
+"4",
+"6",
+"Done"])
