@@ -1,0 +1,21 @@
+function employees(arr) {
+    let employees = {};
+
+    for (let line of arr) {
+        employees[line] = line.length;
+        
+    }
+    Object.entries(employees).forEach(element => {
+        console.log(`Name: ${element[0]} -- Personal Number: ${element[1]}`);
+        
+    });
+
+}
+
+employees([
+    'Silas Butler',
+    'Adnaan Buckley',
+    'Juan Peterson',
+    'Brendan Villarreal'
+    ]
+    )
